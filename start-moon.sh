@@ -3,6 +3,8 @@
 # borrowed from https://github.com/rwv/docker-zerotier-moon
 # usage ./start-moon.sh -4 1.2.3.4 -6 2001:abcd:abcd::1 -p 9993
 
+export PATH=/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin
+
 moon_port=9993 # default ZeroTier moon port
 
 while getopts "4:6:p:" arg; do # handle args
@@ -43,7 +45,7 @@ else                                # ipv4 address is set
 fi
 
 # trim whitespace
-stableEndpointsForSed="$(echo -e "${stableEndpointsForSed}" | tr -d '[:space:]')"
+stableEndpointsForSed="$(echo "${stableEndpointsForSed}" | tr -d '[:space:]')"
 echo "stableEndpoints: $stableEndpointsForSed"
 
 if [ -d "/var/lib/zerotier-one/moons.d" ]; then # check if the moons conf has generated
