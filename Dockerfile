@@ -1,4 +1,4 @@
-FROM alpine:3.13 as builder
+FROM alpine:3.14.1 as builder
 
 ARG ZT_COMMIT=e8f7d5ef9e7ba6be0b2163cfa31f8817ba5b18f4
 
@@ -8,7 +8,7 @@ RUN apk add --update alpine-sdk linux-headers \
   && cd /src \
   && make -f make-linux.mk
 
-FROM alpine:3.13
+FROM alpine:3.14.1
 LABEL version="1.6.5"
 LABEL description="ZeroTier One moon as Docker Image"
 
