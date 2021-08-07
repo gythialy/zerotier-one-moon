@@ -1,0 +1,13 @@
+version: '3.5'
+
+services:
+  zerotier-moon:
+    image: gythialy/zerotier-one-moon:lastest
+    container_name: zerotier-moon
+    ports:
+      - 9993:9993/udp
+    command:
+      - -4 xxx.xxx.xxx.xxx
+      - -p 9993
+    volumes:
+      - ./zerotier-one:/var/lib/zerotier-one
