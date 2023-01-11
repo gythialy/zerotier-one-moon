@@ -2,7 +2,7 @@ version: "3.5"
 
 services:
   zerotier-moon:
-    image: gythialy/zerotier-one-moon:lastest
+    image: ghcr.io/gythialy/zerotier-one-moon:latest
     container_name: zerotier-moon
     cap_add:
       - NET_ADMIN
