@@ -1,4 +1,4 @@
-FROM alpine:3.17.0
+FROM alpine:3.17.1
 
 LABEL version="1.10.2"
 LABEL description="ZeroTier One moon as Docker Image"
