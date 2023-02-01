@@ -46,7 +46,7 @@ fi
 
 # trim whitespace
 stableEndpointsForSed="$(echo "${stableEndpointsForSed}" | tr -d '[:space:]')"
-echo "stableEndpoints: $stableEndpointsForSed"
+echo -e "stableEndpoints: ${stableEndpointsForSed}"
 
 if [ -d "/var/lib/zerotier-one/moons.d" ]; then # check if the moons conf has generated
   moon_id=$(cat /var/lib/zerotier-one/identity.public | cut -d ':' -f1)
