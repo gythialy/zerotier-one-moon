@@ -1,6 +1,10 @@
 name: Docker Image CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
 
@@ -18,6 +22,7 @@ jobs:
         images:  ghcr.io/gythialy/zerotier-one-moon
         tags: |
           type=raw,value=latest,enable={{is_default_branch}}
+          type=ref,event=pr
           type=semver,pattern={{version}}
           type=semver,pattern={{major}}.{{minor}}
           type=semver,pattern={{major}}
