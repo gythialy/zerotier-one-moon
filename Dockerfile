@@ -1,9 +1,12 @@
-FROM alpine:3.17.3
+FROM debian:bullseye
 
-LABEL version="1.10.2"
+LABEL version="1.10.6"
 LABEL description="ZeroTier One moon as Docker Image"
 
-RUN apk add --no-cache zerotier-one=1.10.2-r0
+RUN apt-get update -qq && apt-get install -y curl gpg sudo \
+  iproute2 net-tools iputils-ping openssl libssl1.1 procps ca-certificates; \
+  rm -rf /var/lib/apt/lists/*;\
+  curl -s https://install.zerotier.com | sudo bash;
 
 # ZeroTier relies on UDP port 9993
 EXPOSE 9993/udp
