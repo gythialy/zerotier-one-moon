@@ -23,6 +23,7 @@ services:
   zerotier-moon:
     image: ghcr.io/gythialy/zerotier-one-moon:latest
     container_name: zerotier-moon
+    restart: always
     cap_add:
       - NET_ADMIN
       - SYS_ADMIN
