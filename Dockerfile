@@ -1,9 +1,9 @@
 FROM debian:bookworm-slim
 
-LABEL version="1.14.0"
+LABEL version="1.14.2"
 LABEL description="ZeroTier One moon as Docker Image"
 
-ARG VERSION=1.14.0
+ARG VERSION=1.14.2
 
 RUN apt-get update -qq && apt-get install curl gpg ca-certificates -y \
     &&  mkdir -p /usr/share/zerotier && \
